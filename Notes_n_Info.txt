@@ -1,0 +1,17 @@
+///////////////////////////////////////////////////
+
+    Notes along the way
+
+///////////////////////////////////////////////////
+
+ - FLASK is a class that implements WSGI interface.
+ - Instance of Flask class will be our WSGI application.
+
+ - Open up new virtual shell inside of pipenv virtual environment that we set up
+ -            $ pipenv shell # Opens virtual environment
+              $ flask run --host=0.0.0.0   # will run your .py flask application file
+
+            - Web server log will display requests
+            - http://127.0.0.1:5000/hello
+                        ^ default "local" host IP address
+                          - $ ifconfig -a   # will display my IP address on from the network I'm on
