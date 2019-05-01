@@ -18,5 +18,5 @@ export FLASK_APP=$flaskTargetFile  #file is an argument of f
 export FLASK_ENV=$enviornment  #environment is an argument of e
 
 #Tell flask to start, and open it up to the local network
-pipenv run flask run --host=0.0.0.0
+pipenv run flask run -h 0.0.0.0 -p 5001     #running on port 5,001, open to other computers (0.0.0.0)
 

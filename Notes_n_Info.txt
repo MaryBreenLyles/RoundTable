@@ -15,3 +15,7 @@
             - http://127.0.0.1:5000/hello
                         ^ default "local" host IP address
                           - $ ifconfig -a   # will display my IP address on from the network I'm on
+
+
+ - Command to open MariaDB: sudo mysql
+ - Database runs on port 3306 (default) -*see dbeaver
