@@ -19,3 +19,15 @@
 
  - Command to open MariaDB: sudo mysql
  - Database runs on port 3306 (default) -*see dbeaver
+
+ - with statements
+ - try..finally
+ - exceptions
+
+
+ - JINJA 2: Flask's templating engine
+    - Delimiters (default):
+     {% ... %} for Statements
+     {{ ... }} for Expressions to print to the template output
+     {# ... #} for Comments not included in the template output
+     #  ... ## for Line Statements

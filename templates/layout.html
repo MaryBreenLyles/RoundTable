@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flask Template Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style type="text/css">
+      .container {
+        max-width: 500px;
+        padding-top: 100px;
+      }
+      h2 {color: blue;}
+    </style>
+  </head>
+
+    <script>
+        addMsg = function(){
+            
+        }
+    </script>
+
+  <body>
+
+    {# Add a navigation bar, yo! --> now all extending child templates will have same one #}
+    <nav class="navbar navbar-inverse" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Kurt and Mollie's Wild Ride!</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Add a Message :D</a></li>
+            <li><a href="/showMsg">Show Existing Messages (.)(.)</a></li>
+          </ul>
+          
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Link</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">About</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    
+    {# Submit button#}
+    <button type="submit" class="btn btn-default" id="addEntry_id">Add DB Entry</button>
+    {# Submit box#}
+    <div class="form-group">
+        <input type="text" id="msgTextBox" class="form-control" placeholder="Search">
+    </div>
+            
+    <div class="container">
+      <h2>This is part of my base template</h2>
+      <br>
+         {#define a block or area that the child templates can fill in#}
+      {% block content %}{% endblock %}
+      <br>
+      <h2>This is part of my base template</h2>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        
+    <script>             
+            $("#addEntry_id").click(function() {                
+                $.ajax({
+                  url: '/addMsg/' + $("#msgTextBox").val(),
+                  success: function() {alert("you added " + $("#msgTextBox").val() + " to the database.")},
+                });
+            });
+
+            $("#msgTextBox").keydown(function(e) { 
+                var keyCode = (e.which);   
+                if (keyCode == 13) {
+                    $('#addEntry_id').trigger('click');
+                }
+            });
+    </script>
+    
+
+  </body>
+</html>
+
+<style>
+        #msgTxtBox {
+            width: 300px !important;        
+        }
+    </style>
