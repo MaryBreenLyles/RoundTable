@@ -2,6 +2,7 @@ import pymysql
 from flask import render_template
 
 from flask import Flask     # > Import Flask class
+import pymysql
 app = Flask(__name__)       # > Create *instance* of Flask Class obj 
                             #   - (will be our WSGI application)*
                          
@@ -70,5 +71,4 @@ def add_message(msg):
           vs. actual import name. (Flask needs name to know
           where to look for tmeplates, static files, etc.
           See Flask documentation for more.
-
 '''
