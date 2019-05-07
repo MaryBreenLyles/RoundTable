@@ -1,0 +1,40 @@
+<html>
+<script>
+    encodeEmail = function() {
+        //document.getElementById("email_encoded").value = "You added" + document.getElementById("email_input").value + "to the database";
+        window.location.href = "http://192.168.0.21:5000/addMsg/"+encodeURIComponent(document.getElementById("email_input").value);
+        
+        updateEmailEncodedCount();
+    }
+
+    updateEmailCount = function() {
+        document.getElementById("emailCount").textContent = document.getElementById("email_input").value.length;
+    }
+
+    updateEmailEncodedCount = function() {
+        document.getElementById("emailEncodedCount").textContent = document.getElementById("email_encoded").value.length;
+    }
+</script>
+
+<body>
+    <div style="display: inline-block">
+        <b>Email Input</b>
+        <span style="float: right">Character Count: <span id="emailCount">0</span></span>
+        <br>
+        <textarea id="email_input" oninput="updateEmailCount()" cols="150" rows="25"></textarea>
+        <br>
+        <button onclick="encodeEmail()"> Encode Email </button>
+    </div>
+    <br>
+    <div style="display: inline-block">
+        <br> <b>Email Encoded:</b>
+        <span style="float: right">Character Count: <span id="emailEncodedCount">0</span></span>
+        <br>
+        <textarea id="email_encoded" oninput="updateEmailEncodedCount()" cols="150" rows="25"></textarea>
+    </div>
+</body>
+
+</html>
+<script>
+    updateEmailCount()
+</script>
