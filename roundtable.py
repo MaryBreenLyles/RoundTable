@@ -14,7 +14,7 @@ connection = pymysql.connect(host='localhost',
                              cursorclass=pymysql.cursors.DictCursor)
 
 
-
+#For playing around
 @app.route("/")
 def template_test():
     # Create new Jinja template (template.html), w/ keyword arg option
@@ -22,6 +22,12 @@ def template_test():
 
 #if __name__ == '__main__':
 #    app.run(debug=True)
+
+
+@app.route("/About")
+def about_page():
+    # Create new Jinja template
+    return render_template('About.html')
 
 
 

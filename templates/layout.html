@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Flask Template Example</title>
+    <title>MindMap</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <style type="text/css">
@@ -13,15 +13,9 @@
     </style>
   </head>
 
-    <script>
-        addMsg = function(){
-            
-        }
-    </script>
-
   <body>
 
-    {# Add a navigation bar, yo! --> now all extending child templates will have same one #}
+    {# Add a navigation bar --> all extending child templates will have same one #}
     <nav class="navbar navbar-inverse" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -45,7 +39,7 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">About</a></li>
+                <li><a href="/About">About</a></li>
                 <li><a href="#">FAQ</a></li>
                 <li><a href="#">Something else here</a></li>
                 <li class="divider"></li>
@@ -58,25 +52,26 @@
     </nav>
     
     {# Submit button#}
-    <button type="submit" class="btn btn-default" id="addEntry_id">Add DB Entry</button>
+    <button type="submit" class="btn btn-default" id="addEntry_button">Add DB Entry</button>
     {# Submit box#}
     <div class="form-group">
         <input type="text" id="msgTextBox" class="form-control" placeholder="Search">
     </div>
             
     <div class="container">
-      <h2>This is part of my base template</h2>
+      <h2 class="mindmap">Welcome to MindMap</h2>
       <br>
-         {#define a block or area that the child templates can fill in#}
+      {#define a block or area that the child templates can fill in#}
       {% block content %}{% endblock %}
       <br>
-      <h2>This is part of my base template</h2>
+      <h2>________________________</h2>
     </div>
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-        
+     
+{# ADD A NEW MESSAGE ENTRY#}
     <script>             
-            $("#addEntry_id").click(function() {                
+            $("#addEntry_button").click(function() {                
                 $.ajax({
                   url: '/addMsg/' + $("#msgTextBox").val(),
                   success: function() {alert("you added " + $("#msgTextBox").val() + " to the database.")},
@@ -86,7 +81,7 @@
             $("#msgTextBox").keydown(function(e) { 
                 var keyCode = (e.which);   
                 if (keyCode == 13) {
-                    $('#addEntry_id').trigger('click');
+                    $('#addEntry_button').trigger('click');
                 }
             });
     </script>
@@ -96,7 +91,7 @@
 </html>
 
 <style>
-        #msgTxtBox {
-            width: 300px !important;        
-        }
-    </style>
+   #msgTxtBox {
+   width: 300px !important;        
+   }
+</style>

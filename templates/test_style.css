@@ -1,0 +1,32 @@
+/* Testing some CSS on the page */
+
+body {
+    margin: 10px;
+    background-color: rgb(240,240,240);
+    font-family: 'Garamond', 'Georgia', serif;
+    font-size: 20px;
+
+}
+
+
+.mindmap { 
+    font-size: 40px;
+    color: teal;
+}
+
+.About {
+    font-size: 40px;
+    color: purple;
+}
+
+.about_header {
+    font-style: italic;
+    font-weight: 100;
+}
+
+.about_body { border: 2px solid MediumVioletRed; }
+
+.about_fancy {
+    font-family: 'American Typewriter', 'FreeMono', serif;
+    font-weight: 900;
+}
